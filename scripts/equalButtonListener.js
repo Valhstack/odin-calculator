@@ -14,7 +14,7 @@ document.getElementById("equalButton").addEventListener('click', (event) => {
             result = operate(Number(param1), selectedOperator, Number(param2));
             if (typeof result !== "undefined") { // covers division by 0
                 if (Number.isInteger(result)) document.getElementById("calcDisplayInfo").textContent = result;
-                else document.getElementById("calcDisplayInfo").textContent = result.toFixed(10);
+                else document.getElementById("calcDisplayInfo").textContent = Number(result.toFixed(10)); // to avoid tailing zeroes (0.500000) converting to Number again
 
                 operator = null;
                 param1 = null;

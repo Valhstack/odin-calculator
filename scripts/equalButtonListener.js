@@ -1,0 +1,25 @@
+document.getElementById("equalButton").addEventListener('click', (event) => {
+    if (event.target.innerText === "=") {
+        if (param1 != null) {
+            param2 = document.getElementById("calcDisplayInfo").textContent.replace(/[^0-9]/g, "");
+        }
+
+        if (param1 == null && param2 == null) { // covers a use-case where = pressed when neither param is specified
+            return;
+        }
+        else if (param2 == null || param2 == "") { //covers use case when = is pressed after any other operator
+            alert("Invalid format used");
+        }
+        else {
+            result = operate(Number(param1), selectedOperator, Number(param2));
+            if (typeof result !== "undefined") { // covers division by 0
+                if (Number.isInteger(result)) document.getElementById("calcDisplayInfo").textContent = result;
+                else document.getElementById("calcDisplayInfo").textContent = result.toFixed(10);
+
+                operator = null;
+                param1 = null;
+                param2 = null;
+            }
+        }
+    }
+})

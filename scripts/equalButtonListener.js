@@ -19,6 +19,8 @@ document.getElementById("equalButton").addEventListener('click', (event) => {
                 operator = null;
                 param1 = null;
                 param2 = null;
+
+                document.getElementById("calcDisplayHistoryInfo").textContent = "";
             }
         }
     }

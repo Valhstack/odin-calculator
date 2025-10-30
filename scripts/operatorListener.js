@@ -23,5 +23,6 @@ document.getElementById("mainCalcOperators").addEventListener('click', (event) =
         param2 = null;
     }
 
-    document.getElementById("calcDisplayInfo").textContent = event.target.innerText;
+    document.getElementById("calcDisplayHistoryInfo").textContent = document.getElementById("calcDisplayInfo").textContent + event.target.innerText;
+    document.getElementById("calcDisplayInfo").textContent = "";
 })

@@ -5,6 +5,6 @@ document.getElementById("clearButton").addEventListener('click', () => {
     result = null;
 
     document.getElementById("calcDisplayInfo").textContent = "";
-
-    console.log(param1, " ", operator, " ", param2);
+    document.getElementById("calcDisplayHistoryInfo").textContent = "";
+    document.getElementById("calcDisplayOperator").textContent = "";
 })

@@ -21,6 +21,7 @@ document.getElementById("equalButton").addEventListener('click', (event) => {
                 param2 = null;
 
                 document.getElementById("calcDisplayHistoryInfo").textContent = "";
+                document.getElementById("calcDisplayOperator").textContent = "";
             }
         }
     }

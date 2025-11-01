@@ -23,6 +23,15 @@ function divide(param1, param2) {
     return param1 / param2;
 }
 
+function percentage(param1, operator, param2){
+    if(operator == "+" || operator == "-"){
+        return operate(param1, operator, param1 * (param2 / 100));
+    }
+    else if (operator == "*" || operator == "/"){
+        return operate(param1, operator, (param2 / 100));
+    }
+}
+
 function operate(param1, operator, param2){
     switch (operator){
         case "+":

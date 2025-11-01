@@ -1,12 +1,19 @@
-document.getElementById("mainCalcOperators").addEventListener('click', (event) => {
-    if(displayInfo.textContent == "") return;
+document.addEventListener('click', (event) => {
+    if(event.target.classList.contains("operatorBtn")){
+        operatorOnClick(event);
+    }
+})
+
+function operatorOnClick(event) {
+    if (displayInfo.textContent == "") return;
+    
     operator = event.target.innerText;
     isOpSelected = !isOpSelected;
     isDot = !isDot;
     isSign = !isSign;
 
     if (param1 != null) {
-        param2 = displayInfo.textContent.replace(/[^0-9.-]/g, "");
+        param2 = displayInfo.textContent.replace(/[^0-9.%-]/g, "");
     }
 
     if (param1 == null) {
@@ -35,4 +42,4 @@ document.getElementById("mainCalcOperators").addEventListener('click', (event) =
     document.getElementById("calcDisplayOperator").textContent = event.target.innerText;
 
     displayInfo.textContent = "";
-})
+}

@@ -1,11 +1,14 @@
-document.getElementById("calcKeyBoard").addEventListener('click', (event) => {
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("keyboardBtn")) {
+    calcKeyBoardOnClick(event);
+  }
+});
+
+function calcKeyBoardOnClick(event){
     if (result != null){
-        document.getElementById("calcDisplayInfo").textContent = "";
+        displayInfo.textContent = "";
         result = null;
     }
 
-    document.getElementById("calcDisplayInfo").textContent += event.target.innerText;
-})
-
-// perhaps listener can be re-attached based on class - this will require keyboard to simply have it's own
-// class, while giving flexibility to add other buttons to the same div
+    displayInfo.textContent += event.target.innerText;
+}

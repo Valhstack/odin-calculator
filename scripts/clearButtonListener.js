@@ -1,10 +1,12 @@
-document.getElementById("clearButton").addEventListener('click', () => {
+document.getElementById("clearAllBtn").addEventListener('click', () => {
     param1 = null;
     param2 = null;
     operator = null;
     result = null;
+    isDot = false;
+    isSign = false;
 
-    document.getElementById("calcDisplayInfo").textContent = "";
+    displayInfo.textContent = "";
     document.getElementById("calcDisplayHistoryInfo").textContent = "";
     document.getElementById("calcDisplayOperator").textContent = "";
 })

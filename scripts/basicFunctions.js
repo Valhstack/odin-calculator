@@ -1,4 +1,6 @@
-let param1, param2, selectedOperator, operator, isOpSelected = false, result = null;
+let param1, param2, selectedOperator, operator, isOpSelected = false, result = null, isDot = false, isSign = false;
+
+const displayInfo = document.getElementById("calcDisplayInfo");
 
 function add(param1, param2) {
     return param1 + param2;

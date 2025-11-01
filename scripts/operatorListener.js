@@ -1,14 +1,16 @@
 document.getElementById("mainCalcOperators").addEventListener('click', (event) => {
-    if(document.getElementById("calcDisplayInfo").textContent == "") return;
+    if(displayInfo.textContent == "") return;
     operator = event.target.innerText;
     isOpSelected = !isOpSelected;
+    isDot = !isDot;
+    isSign = !isSign;
 
     if (param1 != null) {
-        param2 = document.getElementById("calcDisplayInfo").textContent.replace(/[^0-9]/g, "");
+        param2 = displayInfo.textContent.replace(/[^0-9.-]/g, "");
     }
 
     if (param1 == null) {
-        param1 = document.getElementById("calcDisplayInfo").textContent;
+        param1 = displayInfo.textContent;
         selectedOperator = operator;
     }
     else if (param2 == null || param2 == "") {
@@ -17,20 +19,20 @@ document.getElementById("mainCalcOperators").addEventListener('click', (event) =
 
     if (param2 != null && param2 != "") {
         if (typeof operate(Number(param1), selectedOperator, Number(param2)) != 'undefined')
-            document.getElementById("calcDisplayInfo").textContent = operate(Number(param1), selectedOperator, Number(param2));
+            displayInfo.textContent = operate(Number(param1), selectedOperator, Number(param2));
         else return;
 
-        param1 = document.getElementById("calcDisplayInfo").textContent;
+        param1 = displayInfo.textContent;
         selectedOperator = operator;
         param2 = null;
     }
 
     if (param2 != "" || param2 != null)
-        document.getElementById("calcDisplayHistoryInfo").textContent = document.getElementById("calcDisplayInfo").textContent;
+        document.getElementById("calcDisplayHistoryInfo").textContent = displayInfo.textContent;
     else
-        document.getElementById("calcDisplayHistoryInfo").textContent += document.getElementById("calcDisplayInfo").textContent;
+        document.getElementById("calcDisplayHistoryInfo").textContent += displayInfo.textContent;
 
     document.getElementById("calcDisplayOperator").textContent = event.target.innerText;
 
-    document.getElementById("calcDisplayInfo").textContent = "";
+    displayInfo.textContent = "";
 })

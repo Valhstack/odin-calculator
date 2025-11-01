@@ -15,7 +15,8 @@
 
         <div id="calculator">
             <div id="display">
-                <div id="calcDisplayHistory"> <!-- Needs it's own height to make sure it doesn't seem like info typed there in the first place-->
+                <div id="calcDisplayHistory">
+                    <!-- Needs it's own height to make sure it doesn't seem like info typed there in the first place-->
                     <span id="calcDisplayHistoryInfo"></span><span id="calcDisplayOperator"></span>
                 </div>
                 <div id="calcDisplay">
@@ -24,16 +25,21 @@
             </div>
             <div id="keyboard">
                 <div id="calcKeyBoard">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>0</button>
+                    <button id="clearAllBtn">CA</button>
+                    <button id="clearOneBtn">D</button>
+                    <button class="keyboardBtn">1</button>
+                    <button class="keyboardBtn">2</button>
+                    <button class="keyboardBtn">3</button>
+                    <button class="keyboardBtn">4</button>
+                    <button class="keyboardBtn">5</button>
+                    <button class="keyboardBtn">6</button>
+                    <button class="keyboardBtn">7</button>
+                    <button class="keyboardBtn">8</button>
+                    <button class="keyboardBtn">9</button>
+                    <button class="keyboardBtn">0</button>
+                    <button id="dotBtn">.</button>
+                    <button id="equalBtn">=</button>
+                    <button id="signBtn">+/-</button>
                 </div>
 
                 <div id="calcOperators">
@@ -42,10 +48,6 @@
                         <button>-</button>
                         <button>*</button>
                         <button>/</button>
-                    </div>
-                    <div id="helperOperators"> <!-- These buttons can be moved near calcKeyBoard-->
-                        <button id="equalButton">=</button>
-                        <button id="clearButton">Clear</button>
                     </div>
                 </div>
             </div>
@@ -64,6 +66,8 @@
     <script src="./scripts/operatorListener.js"></script>
     <script src="./scripts/equalButtonListener.js"></script>
     <script src="./scripts/clearButtonListener.js"></script>
+    <script src="./scripts/dotButtonListener.js"></script>
+    <script src="./scripts/signButtonListener.js"></script>
 </body>
 
 </html>

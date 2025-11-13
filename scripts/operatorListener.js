@@ -11,6 +11,7 @@ function operatorOnClick(event) {
     isOpSelected = !isOpSelected;
     isDot = !isDot;
     isSign = !isSign;
+    document.getElementById("calcDisplay").style["font-size"] = "42px"
 
     if (param1 != null) {
         param2 = displayInfo.textContent.replace(/[^0-9.%-]/g, "");

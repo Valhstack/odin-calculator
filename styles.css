@@ -13,6 +13,11 @@
     src: url("./fonts/Lato-Bold.ttf");
 }
 
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("./fonts/IBMPlexMono-Regular.ttf");
+}
+
 body {
     background-color: #243447;
 
@@ -22,6 +27,7 @@ body {
     color: #E0E0E0;
 
     font-family: "Lato Light";
+    font-variant-numeric: tabular-nums;
 
     min-height: 100dvh;
 
@@ -35,6 +41,11 @@ body {
 main {
     flex: 1 0 auto;
     padding: 32px 64px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
 }
 
 footer {
@@ -47,6 +58,7 @@ footer {
 
 h1 {
     font-family: "Raleway";
+    font-variant-numeric: tabular-nums;
     font-size: 36px;
 
     margin: 0;
@@ -76,16 +88,76 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 20px;
-    width: 300px
+    width: 300px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 20px rgba(74, 144, 226, 0.25);
 }
 
 #display {
     background-color: #34495E;
+    box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.14);
     height: 100px;
     border-radius: 16px;
+
+    padding: 8px 16px;
+
+    text-align: right;
+
+    font-family: "IBM Plex Mono";
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#calcDisplay {
+    font-size: 42px;
+}
+
+#calcDisplayHistory {
+    height: 16px;
+    opacity: 0.75;
+
+    font-size: 25px;
 }
 
 #keyboard {
+    flex-wrap: nowrap;
+    padding-top: 16px;
+}
+
+#footerText {
+    font-size: 16px;
+}
+
+#attribution{
+    font-size: 16px;
+}
+
+.buttonsPlacement {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #E0E0E0;
+}
+
+.keyboardBtn{
+    background-color: #3B5166;
+}
+
+.operatorBtn{
+    background-color: #426B88;
 }

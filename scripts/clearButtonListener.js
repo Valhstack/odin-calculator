@@ -9,4 +9,5 @@ document.getElementById("clearAllBtn").addEventListener('click', () => {
     displayInfo.textContent = "";
     document.getElementById("calcDisplayHistoryInfo").textContent = "";
     document.getElementById("calcDisplayOperator").textContent = "";
+    document.getElementById("calcDisplay").style["font-size"] = "42px"
 })

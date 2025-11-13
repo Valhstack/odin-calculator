@@ -11,7 +11,9 @@
 
 <body>
     <main>
-        <h1>Odin: Calculator</h1>
+        <div class="header">
+            <h1>Calculator</h1>
+        </div>
 
         <div id="calculator">
             <div id="display">
@@ -23,33 +25,33 @@
                     <span id="calcDisplayInfo"></span>
                 </div>
             </div>
-            <div id="keyboard">
-                <div id="calcKeyBoard">
-                    <button id="clearAllBtn">CA</button>
-                    <button id="clearOneBtn">D</button>
-                    <button id="percentageBtn">%</button>
-                    <button class="keyboardBtn">1</button>
-                    <button class="keyboardBtn">2</button>
-                    <button class="keyboardBtn">3</button>
-                    <button class="keyboardBtn">4</button>
-                    <button class="keyboardBtn">5</button>
-                    <button class="keyboardBtn">6</button>
-                    <button class="keyboardBtn">7</button>
-                    <button class="keyboardBtn">8</button>
-                    <button class="keyboardBtn">9</button>
-                    <button class="keyboardBtn">0</button>
-                    <button id="dotBtn">.</button>
-                    <button id="signBtn">+/-</button>
+            <div id="keyboard" class="buttonsPlacement">
+                <div id="calcKeyBoard" class="buttonsPlacement">
+                    <button id="clearAllBtn" class="text">CA</button>
+                    <button id="clearOneBtn" class="text">D</button>
+                    <button id="percentageBtn" class="text">%</button>
+                    <button class="keyboardBtn text">7</button>
+                    <button class="keyboardBtn text" class="text">8</button>
+                    <button class="keyboardBtn text">9</button>
+                    <button class="keyboardBtn text">4</button>
+                    <button class="keyboardBtn text">5</button>
+                    <button class="keyboardBtn text">6</button>
+                    <button class="keyboardBtn text">1</button>
+                    <button class="keyboardBtn text">2</button>
+                    <button class="keyboardBtn text">3</button>
+                    <button id="signBtn" class="keyboardBtn text">+/-</button>
+                    <button class="keyboardBtn text">0</button>
+                    <button id="dotBtn" class="keyboardBtn text">.</button>
                 </div>
 
-                <div id="calcOperators">
-                    <div id="mainCalcOperators">
-                        <button class="operatorBtn">+</button>
-                        <button class="operatorBtn">-</button>
-                        <button class="operatorBtn">*</button>
-                        <button class="operatorBtn">/</button>
+                <div id="calcOperators" class="buttonsPlacement">
+                    <div id="mainCalcOperators" class="buttonsPlacement">
+                        <button class="operatorBtn text">+</button>
+                        <button class="operatorBtn text">-</button>
+                        <button class="operatorBtn text">*</button>
+                        <button class="operatorBtn text">/</button>
                     </div>
-                    <button id="equalBtn">=</button>
+                    <button id="equalBtn" class="text">=</button>
                 </div>
             </div>
 

@@ -2,6 +2,8 @@ let param1, param2, selectedOperator, operator, isOpSelected = false, result = n
 
 const displayInfo = document.getElementById("calcDisplayInfo");
 
+const maxLength = 16;
+
 function add(param1, param2) {
     return param1 + param2;
 }

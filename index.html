@@ -15,46 +15,60 @@
             <h1>Calculator</h1>
         </div>
 
-        <div id="calculator">
-            <div id="display">
-                <div id="calcDisplayHistory">
-                    <!-- Needs it's own height to make sure it doesn't seem like info typed there in the first place-->
-                    <span id="calcDisplayHistoryInfo"></span><span id="calcDisplayOperator"></span>
-                </div>
-                <div id="calcDisplay">
-                    <span id="calcDisplayInfo"></span>
-                </div>
-            </div>
-            <div id="keyboard" class="buttonsPlacement">
-                <div id="calcKeyBoard" class="buttonsPlacement">
-                    <button id="clearAllBtn" class="utilityBtn text" data-num="Delete">CA</button>
-                    <button id="clearOneBtn" class="utilityBtn text" data-num="Backspace">D</button>
-                    <button id="percentageBtn" class="utilityBtn text"data-num="%">%</button>
-                    <button class="keyboardBtn text" data-num="7">7</button>
-                    <button class="keyboardBtn text" data-num="8">8</button>
-                    <button class="keyboardBtn text" data-num="9">9</button>
-                    <button class="keyboardBtn text" data-num="4">4</button>
-                    <button class="keyboardBtn text" data-num="5">5</button>
-                    <button class="keyboardBtn text" data-num="6">6</button>
-                    <button class="keyboardBtn text" data-num="1">1</button>
-                    <button class="keyboardBtn text" data-num="2">2</button>
-                    <button class="keyboardBtn text" data-num="3">3</button>
-                    <button id="signBtn" class="keyboardBtn text" data-num="±, Tab">+/-</button>
-                    <button class="keyboardBtn text" data-num="0">0</button>
-                    <button id="dotBtn" class="keyboardBtn text" data-num=".">.</button>
-                </div>
-
-                <div id="calcOperators" class="buttonsPlacement">
-                    <div id="mainCalcOperators" class="buttonsPlacement">
-                        <button class="operatorBtn text" data-num="+">+</button>
-                        <button class="operatorBtn text" data-num="-">-</button>
-                        <button class="operatorBtn text" data-num="*">*</button>
-                        <button class="operatorBtn text" data-num="/">/</button>
+        <div class="mainScreen">
+            <div id="calculator">
+                <div id="display">
+                    <div id="calcDisplayHistory">
+                        <!-- Needs it's own height to make sure it doesn't seem like info typed there in the first place-->
+                        <span id="calcDisplayHistoryInfo"></span><span id="calcDisplayOperator"></span>
                     </div>
-                    <button id="equalBtn" class="text" data-num="=, Enter">=</button>
+                    <div id="calcDisplay">
+                        <span id="calcDisplayInfo"></span>
+                    </div>
+                </div>
+                <div id="keyboard" class="buttonsPlacement">
+                    <div id="calcKeyBoard" class="buttonsPlacement">
+                        <button id="clearAllBtn" class="utilityBtn text" data-num="Delete, Escape">CA</button>
+                        <button id="clearOneBtn" class="utilityBtn text" data-num="Backspace">D</button>
+                        <button id="percentageBtn" class="utilityBtn text" data-num="%">%</button>
+                        <button class="keyboardBtn text" data-num="7">7</button>
+                        <button class="keyboardBtn text" data-num="8">8</button>
+                        <button class="keyboardBtn text" data-num="9">9</button>
+                        <button class="keyboardBtn text" data-num="4">4</button>
+                        <button class="keyboardBtn text" data-num="5">5</button>
+                        <button class="keyboardBtn text" data-num="6">6</button>
+                        <button class="keyboardBtn text" data-num="1">1</button>
+                        <button class="keyboardBtn text" data-num="2">2</button>
+                        <button class="keyboardBtn text" data-num="3">3</button>
+                        <button id="signBtn" class="keyboardBtn text" data-num="±, Tab">+/-</button>
+                        <button class="keyboardBtn text" data-num="0">0</button>
+                        <button id="dotBtn" class="keyboardBtn text" data-num=".">.</button>
+                    </div>
+
+                    <div id="calcOperators" class="buttonsPlacement">
+                        <div id="mainCalcOperators" class="buttonsPlacement">
+                            <button class="operatorBtn text" data-num="+">+</button>
+                            <button class="operatorBtn text" data-num="-">-</button>
+                            <button class="operatorBtn text" data-num="*">*</button>
+                            <button class="operatorBtn text" data-num="/">/</button>
+                        </div>
+                        <button id="equalBtn" class="text" data-num="=, Enter">=</button>
+                    </div>
                 </div>
             </div>
 
+            <img src="./images/hint_icon.png" id="hint">
+            <div class="hidden" id="hint-text">
+                <p>
+                    <b>Tips</b>: <br>Press <b>±</b> or <b>Tab</b> to use the Sign button,
+                </p>
+                <p>
+                    <b>Backspace</b> to delete a single character,
+                </p>
+                <p>
+                    and <b>Del</b> or <b>Esc</b> to clear everything.
+                </p>
+            </div>
         </div>
     </main>
 
@@ -74,6 +88,7 @@
     <script src="./scripts/clearOneButtonListener.js"></script>
     <script src="./scripts/percentageButtonListener.js"></script>
     <script src="./scripts/keyDownListener.js"></script>
+    <script src="./scripts/hintHoverListener.js"></script>
 </body>
 
 </html>

@@ -17,10 +17,20 @@ document.getElementById("equalBtn").addEventListener('click', (event) => {
             }
             else
                 result = operate(Number(param1), selectedOperator, Number(param2));
-            
+
             if (typeof result !== "undefined") { // covers division by 0
+
+                if (result.toString().length > 10)
+                    document.getElementById("calcDisplay").style["font-size"] = "28px";
+
                 if (Number.isInteger(result)) displayInfo.textContent = result;
-                else displayInfo.textContent = Number(result.toFixed(10)); // to avoid tailing zeroes (0.500000) converting to Number again
+                else 
+                    if(result.toString().length <= 15)
+                        displayInfo.textContent = Number(result.toFixed(10)); // to avoid tailing zeroes (0.500000) converting to Number again
+                    else{
+                        let resultSplit = result.toString().split(".");
+                        displayInfo.textContent = Number(result.toFixed(15 - (resultSplit[0].length + 1)));
+                    }
 
                 operator = null;
                 param1 = null;

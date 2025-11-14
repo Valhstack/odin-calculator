@@ -9,7 +9,7 @@ function operatorOnClick(event) {
     
     operator = event.target.innerText;
     isOpSelected = !isOpSelected;
-    isDot = !isDot;
+    if (!isDot) isDot = true;
     isSign = !isSign;
     document.getElementById("calcDisplay").style["font-size"] = "42px"
 

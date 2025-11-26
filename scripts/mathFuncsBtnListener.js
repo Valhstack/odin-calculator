@@ -16,10 +16,10 @@ document.getElementById("mathFuncsBtn").addEventListener("click", () => {
         document.getElementById("calculator").style["margin-left"] = "0";
 
         document.getElementById("mathFuncsLeft").classList.remove("hidden");
-        document.getElementById("mathFuncsLeft").style["margin-left"] = "-120px";
+        document.getElementById("mathFuncsLeft").style["margin-left"] = "-70px";
 
         document.getElementById("mathFuncsRight").classList.remove("hidden");
-        document.getElementById("mathFuncsRight").style["margin-right"] = "-150px";
+        document.getElementById("mathFuncsRight").style["margin-right"] = "-100px";
     }
     else {
         isMathFuncsOpenned = false;

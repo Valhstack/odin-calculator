@@ -172,12 +172,27 @@ img {
 
 .mathFuncsKeyboardLeft,
 .mathFuncsKeyboardRight {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
     background-color: #263746;
 
     height: 360px;
-    width: 150px;
+    width: 100px;
 
     margin-top: 142px;
+}
+
+.mathFuncBtn, #powBtn{
+    background-color: #384D61;
+
+    width: 56px;
+    height: 56px;
 }
 
 .closed,
@@ -195,12 +210,20 @@ img {
     height: 15px;
 }
 
-.left {
+.closed.left {
     left: 7.5%;
 }
 
-.right {
+.closed.right {
     right: 5%;
+}
+
+.openned.left{
+    left: 7.8%;
+}
+
+.openned.right{
+    right: 5.2%;
 }
 
 .top {

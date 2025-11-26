@@ -16,6 +16,21 @@
         </div>
 
         <div class="mainScreen">
+
+            <div class="mathFuncsKeyboardLeft hidden" id="mathFuncsLeft">
+                <button class="mathFuncBtn text">sin</button>
+                <button class="mathFuncBtn text">cos</button>
+                <button class="mathFuncBtn text">tan</button>
+                <button class="mathFuncBtn text">log</button>
+                <button class="mathFuncBtn text">ln</button>
+            </div>
+
+            <img src="./images/hingeClosed.png" class="hinge closed left top">
+            <img src="./images/hingeClosed.png" class="hinge closed left bottom">
+
+            <img src="./images/hinge.svg" class="hidden hinge openned left top">
+            <img src="./images/hinge.svg" class="hidden hinge openned left bottom">
+
             <div id="calculator">
                 <div id="display">
                     <div id="calcDisplayHistory">
@@ -26,11 +41,14 @@
                         <span id="calcDisplayInfo"></span>
                     </div>
                 </div>
-                <div id="keyboard" class="buttonsPlacement">
-                    <div id="calcKeyBoard" class="buttonsPlacement">
-                        <button id="clearAllBtn" class="utilityBtn text" data-num="Delete, Escape">CA</button>
-                        <button id="clearOneBtn" class="utilityBtn text" data-num="Backspace">D</button>
-                        <button id="percentageBtn" class="utilityBtn text" data-num="%">%</button>
+                <div id="keyboard" class="btnsPlacement">
+                    <div id="calcKeyBoard" class="btnsPlacement">
+                        <div id="utilityBtns">
+                            <button id="clearAllBtn" class="utilityBtn text" data-num="Delete, Escape">CA</button>
+                            <button id="clearOneBtn" class="utilityBtn text" data-num="Backspace">D</button>
+                            <button id="percentageBtn" class="utilityBtn text" data-num="%">%</button>
+                            <button id="mathFuncsBtn" class="utilityBtn text">M</button>
+                        </div>
                         <button class="keyboardBtn text" data-num="7">7</button>
                         <button class="keyboardBtn text" data-num="8">8</button>
                         <button class="keyboardBtn text" data-num="9">9</button>
@@ -45,17 +63,31 @@
                         <button id="dotBtn" class="keyboardBtn text" data-num=".">.</button>
                     </div>
 
-                    <div id="calcOperators" class="buttonsPlacement">
-                        <div id="mainCalcOperators" class="buttonsPlacement">
+                    <div id="calcOperators" class="btnsPlacement">
+                        <div id="mainCalcOperators" class="btnsPlacement">
                             <button class="operatorBtn text" data-num="+">+</button>
                             <button class="operatorBtn text" data-num="-">-</button>
-                            <button class="operatorBtn text" data-num="*">*</button>
+                            <button class="operatorBtn text" data-num="*" id="multiplyBtn">*</button>
                             <button class="operatorBtn text" data-num="/">/</button>
                         </div>
                         <button id="equalBtn" class="text" data-num="=, Enter">=</button>
                     </div>
                 </div>
             </div>
+
+            <div class="mathFuncsKeyboardRight hidden" id="mathFuncsRight">
+                <button class="mathFuncBtn text">√</button>
+                <button class="mathFuncBtn constBtn text">π</button>
+                <button class="mathFuncBtn constBtn text">e</button>
+                <button class="mathFuncBtn text">!</button>
+                <button class="operatorBtn text" id="powBtn">^</button>
+            </div>
+
+            <img src="./images/hingeClosed.png" class="hinge closed right top">
+            <img src="./images/hingeClosed.png" class="hinge closed right bottom">
+
+            <img src="./images/hinge.svg" class="hidden hinge openned right top">
+            <img src="./images/hinge.svg" class="hidden hinge openned right bottom">
 
             <img src="./images/hint_icon.png" id="hint">
             <div class="hidden" id="hint-text">
@@ -68,6 +100,11 @@
                 <p>
                     and <b>Del</b> or <b>Esc</b> to clear everything.
                 </p>
+
+                <!-- Add hint for logarythm and in general on how to use the math funcs -->
+                <!-- For math funcs, select the needed func first, then type in the number to operate on -->
+                <!-- If number is input first, the math func or second parameter will be added with multiplication -->
+                <!-- ^ (pow) - first number base, second number to what power to raise base -->
             </div>
         </div>
     </main>
@@ -89,6 +126,9 @@
     <script src="./scripts/percentageButtonListener.js"></script>
     <script src="./scripts/keyDownListener.js"></script>
     <script src="./scripts/hintHoverListener.js"></script>
+    <script src="./scripts/mathFuncsBtnListener.js"></script>
+    <script src="./scripts/mathFunctions.js"></script>
+    <script src="./scripts/mathBtnsListener.js"></script>
 </body>
 
 </html>

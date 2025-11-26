@@ -1,4 +1,4 @@
-let param1, param2, selectedOperator, operator, isOpSelected = false, result = null, isDot = false, isSign = false;
+let param1, param2, selectedOperator, operator, isOpSelected = false, result = null, isDot = false, isSign = false, isMathFuncsOpenned = false;
 
 const displayInfo = document.getElementById("calcDisplayInfo");
 
@@ -34,6 +34,10 @@ function percentage(param1, operator, param2){
     }
 }
 
+function pow(param1, param2) {
+    return Math.pow(param1, param2);
+}
+
 function operate(param1, operator, param2){
     switch (operator){
         case "+":
@@ -44,5 +48,7 @@ function operate(param1, operator, param2){
             return multiply(param1, param2);
         case "/":
             return divide(param1, param2);
+        case "^":
+            return pow(param1, param2);
     }
 }

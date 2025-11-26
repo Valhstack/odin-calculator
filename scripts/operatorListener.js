@@ -1,12 +1,14 @@
+let func, param, tempResult;
+
 document.addEventListener('click', (event) => {
-    if(event.target.classList.contains("operatorBtn")){
+    if (event.target.classList.contains("operatorBtn")) {
         operatorOnClick(event);
     }
 })
 
 function operatorOnClick(event) {
     if (displayInfo.textContent == "") return;
-    
+
     operator = event.target.innerText;
     isOpSelected = !isOpSelected;
     if (isDot) isDot = false;
@@ -18,7 +20,16 @@ function operatorOnClick(event) {
     }
 
     if (param1 == null) {
-        param1 = displayInfo.textContent;
+        if (isMathFuncClicked) { // to cover use case where math func buttons are used 
+            param1 = Number(mathFuncBtnClicked().toFixed(5)); // mathFuncBtnClicked is currently in the equalButtonListener file
+                                                              // but it will be moved when refactoring is done
+
+            isMathFuncClicked = false;
+        }
+        else {
+            param1 = displayInfo.textContent;
+        }
+
         selectedOperator = operator;
     }
     else if (param2 == null || param2 == "") {
@@ -26,8 +37,10 @@ function operatorOnClick(event) {
     }
 
     if (param2 != null && param2 != "") {
-        if (typeof operate(Number(param1), selectedOperator, Number(param2)) != 'undefined')
-            displayInfo.textContent = operate(Number(param1), selectedOperator, Number(param2));
+        if (typeof operate(Number(param1), selectedOperator, Number(param2)) != 'undefined') {
+            tempResult = operate(Number(param1), selectedOperator, Number(param2));
+            displayInfo.textContent = Number(tempResult.toFixed(5));
+        }
         else return;
 
         param1 = displayInfo.textContent;
@@ -35,10 +48,7 @@ function operatorOnClick(event) {
         param2 = null;
     }
 
-    if (param2 != "" || param2 != null)
-        document.getElementById("calcDisplayHistoryInfo").textContent = displayInfo.textContent;
-    else
-        document.getElementById("calcDisplayHistoryInfo").textContent += displayInfo.textContent;
+    document.getElementById("calcDisplayHistoryInfo").textContent = param1;
 
     document.getElementById("calcDisplayOperator").textContent = event.target.innerText;
 

@@ -1,6 +1,19 @@
 document.getElementById("equalBtn").addEventListener('click', (event) => {
     if (event.target.innerText === "=") {
-        if (param1 != null) {
+        if (isMathFuncClicked && document.getElementById("calcDisplayHistoryInfo").textContent === "") {
+            result = mathFuncBtnClicked();
+
+            resultTyping();
+
+            return;
+        }
+        else if (isMathFuncClicked){
+            param1 = document.getElementById("calcDisplayHistoryInfo").textContent;
+
+            param2 = mathFuncBtnClicked().toString();
+        }
+
+        if (param1 != null && !isMathFuncClicked) {
             param2 = displayInfo.textContent.replace(/[^0-9.%-]/g, "");
         }
 
@@ -19,28 +32,66 @@ document.getElementById("equalBtn").addEventListener('click', (event) => {
                 result = operate(Number(param1), selectedOperator, Number(param2));
 
             if (typeof result !== "undefined") { // covers division by 0
-
-                if (result.toString().length > 10)
-                    document.getElementById("calcDisplay").style["font-size"] = "28px";
-
-                if (Number.isInteger(result)) displayInfo.textContent = result;
-                else 
-                    if(result.toString().length <= 15)
-                        displayInfo.textContent = Number(result.toFixed(10)); // to avoid tailing zeroes (0.500000) converting to Number again
-                    else{
-                        let resultSplit = result.toString().split(".");
-                        displayInfo.textContent = Number(result.toFixed(15 - (resultSplit[0].length + 1)));
-                    }
-
-                operator = null;
-                param1 = null;
-                param2 = null;
-                isDot = false;
-                isSign = false;
-
-                document.getElementById("calcDisplayHistoryInfo").textContent = "";
-                document.getElementById("calcDisplayOperator").textContent = "";
+                resultTyping();
             }
         }
     }
-})
+});
+
+function resultTyping() {
+    if (result.toString().length > 10)
+        document.getElementById("calcDisplay").style["font-size"] = "28px";
+
+    if (Number.isInteger(result)) displayInfo.textContent = result;
+    else
+        if (result.toString().length <= 15)
+            displayInfo.textContent = Number(result.toFixed(10)); // to avoid tailing zeroes (0.500000) converting to Number again
+        else {
+            let resultSplit = result.toString().split(".");
+            displayInfo.textContent = Number(result.toFixed(15 - (resultSplit[0].length + 1)));
+        }
+
+    operator = null;
+    param1 = null;
+    param2 = null;
+    isDot = false;
+    isSign = false;
+    isMathFuncClicked = false;
+
+    document.getElementById("calcDisplayHistoryInfo").textContent = "";
+    document.getElementById("calcDisplayOperator").textContent = "";
+}
+
+function mathFuncBtnClicked() {
+    if (displayInfo.textContent.match(/[0-9.]/g)) {
+        if (displayInfo.textContent.match(/[!√]/)) {
+            let match = displayInfo.textContent.match(/[!√]/);
+            func = match[0];
+            param = displayInfo.textContent.replace(func, "");
+        }
+        else {
+            let input = displayInfo.textContent.match(/^([a-zA-Z]+)(\d*\.?\d+)$/);
+
+            if (input) {
+                func = input[1];
+                param = input[2];
+            }
+        }
+
+        tempResult = mathOperate(func, param);
+
+        func = "";
+        param = "";
+    }
+    else if (displayInfo.textContent === "π" || displayInfo.textContent === "e") { // covers const math operators
+        func = displayInfo.textContent;
+        param = "";
+
+        tempResult = mathOperate(func, param);
+
+        func = "";
+        param = "";
+    }
+
+    return tempResult;
+}

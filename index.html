@@ -12,10 +12,29 @@
 <body>
     <main>
         <div class="header">
-            <h1>Calculator</h1>
+            <h1>Calculator <img src="./images/hint_icon.png" id="mobileHint"></h1>
+            <div class="hidden" id="mobile-hint">
+                <p>
+                    <b>Tips</b>: Click <b>D</b> to delete a single character,
+                </p>
+                <p>
+                    <b>CA</b> to clear everything,
+                </p>
+                <p>
+                    rotate your device to landscape to open math functions,
+                </p>
+                <p>
+                    and <b>^</b> to raise a number to a power.
+                </p>
+            </div>
         </div>
 
         <div class="mainScreen">
+            <img src="./images/hingeClosed.png" class="hinge closed left top">
+            <img src="./images/hingeClosed.png" class="hinge closed left bottom">
+
+            <img src="./images/hinge.svg" class="hidden hinge openned left top">
+            <img src="./images/hinge.svg" class="hidden hinge openned left bottom">
 
             <div class="mathFuncsKeyboardLeft hidden" id="mathFuncsLeft">
                 <button class="mathFuncBtn text">sin</button>
@@ -24,12 +43,6 @@
                 <button class="mathFuncBtn text">log</button>
                 <button class="mathFuncBtn text">ln</button>
             </div>
-
-            <img src="./images/hingeClosed.png" class="hinge closed left top">
-            <img src="./images/hingeClosed.png" class="hinge closed left bottom">
-
-            <img src="./images/hinge.svg" class="hidden hinge openned left top">
-            <img src="./images/hinge.svg" class="hidden hinge openned left bottom">
 
             <div id="calculator">
                 <div id="display">
@@ -42,25 +55,35 @@
                     </div>
                 </div>
                 <div id="keyboard" class="btnsPlacement">
-                    <div id="calcKeyBoard" class="btnsPlacement">
+                    <div id="calcKeyBoard" class="btnsPlacement mobileBtnsPlacement">
                         <div id="utilityBtns">
                             <button id="clearAllBtn" class="utilityBtn text" data-num="Delete, Escape">CA</button>
                             <button id="clearOneBtn" class="utilityBtn text" data-num="Backspace">D</button>
                             <button id="percentageBtn" class="utilityBtn text" data-num="%">%</button>
                             <button id="mathFuncsBtn" class="utilityBtn text">M</button>
                         </div>
-                        <button class="keyboardBtn text" data-num="7">7</button>
-                        <button class="keyboardBtn text" data-num="8">8</button>
-                        <button class="keyboardBtn text" data-num="9">9</button>
-                        <button class="keyboardBtn text" data-num="4">4</button>
-                        <button class="keyboardBtn text" data-num="5">5</button>
-                        <button class="keyboardBtn text" data-num="6">6</button>
-                        <button class="keyboardBtn text" data-num="1">1</button>
-                        <button class="keyboardBtn text" data-num="2">2</button>
-                        <button class="keyboardBtn text" data-num="3">3</button>
-                        <button id="signBtn" class="keyboardBtn text" data-num="±, Tab">+/-</button>
-                        <button class="keyboardBtn text" data-num="0">0</button>
-                        <button id="dotBtn" class="keyboardBtn text" data-num=".">.</button>
+                        <div class="keyboardBtns">
+                            <div id="row-1">
+                                <button class="keyboardBtn text" data-num="7">7</button>
+                                <button class="keyboardBtn text" data-num="8">8</button>
+                                <button class="keyboardBtn text" data-num="9">9</button>
+                            </div>
+                            <div id="row-2">
+                                <button class="keyboardBtn text" data-num="4">4</button>
+                                <button class="keyboardBtn text" data-num="5">5</button>
+                                <button class="keyboardBtn text" data-num="6">6</button>
+                            </div>
+                            <div id="row-3">
+                                <button class="keyboardBtn text" data-num="1">1</button>
+                                <button class="keyboardBtn text" data-num="2">2</button>
+                                <button class="keyboardBtn text" data-num="3">3</button>
+                            </div>
+                            <div id="row-4">
+                                <button id="signBtn" class="keyboardBtn text" data-num="±, Tab">+/-</button>
+                                <button class="keyboardBtn text" data-num="0">0</button>
+                                <button id="dotBtn" class="keyboardBtn text" data-num=".">.</button>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="calcOperators" class="btnsPlacement">
@@ -75,6 +98,12 @@
                 </div>
             </div>
 
+            <img src="./images/hingeClosed.png" class="hinge closed right top">
+            <img src="./images/hingeClosed.png" class="hinge closed right bottom">
+
+            <img src="./images/hinge.svg" class="hidden hinge openned right top">
+            <img src="./images/hinge.svg" class="hidden hinge openned right bottom">
+
             <div class="mathFuncsKeyboardRight hidden" id="mathFuncsRight">
                 <button class="mathFuncBtn text">√</button>
                 <button class="mathFuncBtn text">π</button>
@@ -82,12 +111,6 @@
                 <button class="mathFuncBtn text">!</button>
                 <button class="operatorBtn text" id="powBtn">^</button>
             </div>
-
-            <img src="./images/hingeClosed.png" class="hinge closed right top">
-            <img src="./images/hingeClosed.png" class="hinge closed right bottom">
-
-            <img src="./images/hinge.svg" class="hidden hinge openned right top">
-            <img src="./images/hinge.svg" class="hidden hinge openned right bottom">
 
             <img src="./images/hint_icon.png" id="hint">
             <div class="hidden" id="hint-text">
@@ -106,9 +129,6 @@
                 <p>
                     and <b>^</b> to raise a number to a power.
                 </p>
-
-                <!-- For math funcs, select the needed func first, then type in the number to operate on -->
-                <!-- ^ (pow) - first number base, second number to what power to raise base -->
             </div>
         </div>
     </main>
@@ -133,6 +153,8 @@
     <script src="./scripts/mathFuncsBtnListener.js"></script>
     <script src="./scripts/mathFunctions.js"></script>
     <script src="./scripts/mathBtnsListener.js"></script>
+    <script src="./scripts/screenOrientationListener.js"></script>
+    <script src="./scripts/mobileHintListener.js"></script>
 </body>
 
 </html>

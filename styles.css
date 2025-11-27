@@ -419,7 +419,7 @@ img {
         width: 350px;
         margin: 0;
 
-        height: calc(100vh - 120px);
+        height: 100vh;
 
         box-sizing: border-box;
     }

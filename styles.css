@@ -384,7 +384,10 @@ img {
         display: flex;
         justify-content: center;
 
-        gap: 15px;
+        padding: 10px 50px;
+        padding-top: 20px;
+
+        gap: 40px;
     }
 
     .header {
@@ -407,8 +410,8 @@ img {
     #powBtn {
         text-align: center;
         padding: 0;
-        width: 40px;
-        height: 20px;
+        width: 60px;
+        height: 30px;
     }
 
     #mathFuncsBtn {
@@ -416,7 +419,7 @@ img {
     }
 
     #calculator {
-        width: 350px;
+        width: calc(100vw - 200px);
         margin: 0;
 
         height: auto;
@@ -452,8 +455,12 @@ img {
         flex-direction: column;
     }
 
-    #utilityBtns {
-        gap: 10px;
+    #utilityBtns,
+    #row-1,
+    #row-2,
+    #row-3,
+    #row-4 {
+        gap: 40px;
     }
 
     .keyboardBtns {

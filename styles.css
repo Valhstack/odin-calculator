@@ -387,7 +387,7 @@ img {
         padding: 10px 50px;
         padding-top: 20px;
 
-        gap: 40px;
+        gap: 50px;
     }
 
     .header {
@@ -410,8 +410,8 @@ img {
     #powBtn {
         text-align: center;
         padding: 0;
-        width: 60px;
-        height: 30px;
+        width: 80px;
+        height: 40px;
     }
 
     #mathFuncsBtn {
@@ -460,7 +460,7 @@ img {
     #row-2,
     #row-3,
     #row-4 {
-        gap: 40px;
+        gap: 50px;
     }
 
     .keyboardBtns {
